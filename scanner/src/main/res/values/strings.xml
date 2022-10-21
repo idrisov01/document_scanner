@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Scanner</string>
+    <string name="toggle_flash">Переключить всыпшку</string>
+    <string name="null_corners">Документ не найден</string>
+    <string name="confirm_document">Подтвердить документ</string>
+    <string name="close_document_preview">Закрыть предварительный просмотр документа</string>
+    <string name="take_picture">Сделайте снимок</string>
+    <string name="crop_error">Ошибка при обрезке документа</string>
+    <string name="crop_description_title_first">Перетащите маркеры для корректировки</string>
+    <string name="crop_description_title_second">точных границ документа</string>
+    <string name="crop_description_take_scan">Отправить скан</string>
+    <string name="crop_description_rescan">Переснять</string>
+</resources>

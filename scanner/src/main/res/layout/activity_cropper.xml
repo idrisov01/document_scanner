@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/crop_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/cropPreview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/descriptionContainer"
+        app:layout_constraintTop_toBottomOf="@id/closeCropPreview" />
+
+    <ImageButton
+        android:id="@+id/closeCropPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:contentDescription="@string/close_document_preview"
+        android:src="@drawable/ic_close_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/descriptionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descriptionFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/crop_description_title_first"
+            android:textColor="#858585"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descriptionSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/crop_description_title_second"
+            android:textColor="#858585"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionFirst" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/descriptionSecond"
+            app:layout_constraintTop_toBottomOf="@id/descriptionFirst"
+            app:srcCompat="@drawable/ic_description_scanner"
+            app:tint="#858585" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/confirmCrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#0D5FCB"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionSecond"
+            app:layout_constraintWidth_percent="0.5">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="12dp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/crop_description_take_scan"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rescan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/crop_description_rescan"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/confirmCrop"
+            app:layout_constraintEnd_toStartOf="@id/confirmCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/confirmCrop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.idrisov.scanner.presentation.PaperRectangle
+        android:id="@+id/cropHud"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toTopOf="@id/descriptionContainer"
+        app:layout_constraintTop_toBottomOf="@id/closeCropPreview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
